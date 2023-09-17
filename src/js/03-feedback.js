@@ -1,5 +1,5 @@
 import throttle from 'lodash.throttle';
-export function formSetup() {
+
   const form = document.querySelector('.feedback-form');
   const emailInput = form.querySelector("input[name='email']");
   const messageTextarea = form.querySelector("textarea[name='message']");
@@ -17,8 +17,8 @@ export function formSetup() {
     const savedSettings = localStorage.getItem(localStorageKey);
     const parsedSetings = JSON.parse(savedSettings);
     if (parsedSetings && parsedSetings.email && parsedSetings.message) {
-      emailInput.value = parsedSetings.email || '';
-      messageTextarea.value = parsedSetings.message || '';
+      emailInput.value = parsedSetings.email;
+      messageTextarea.value = parsedSetings.message;
     }
   } catch (error) {
     console.error(
@@ -43,4 +43,4 @@ export function formSetup() {
       localStorage.setItem(localStorageKey, JSON.stringify(dataToSave));
     }, 500)
   );
-}
+

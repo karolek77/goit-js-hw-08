@@ -1,7 +1,7 @@
 import Player from '@vimeo/player';
 import throttle from 'lodash.throttle';
 
-export function setupVimeoPlayer() {
+
   const iframe = document.querySelector('#vimeo-player');
   const player = new Player(iframe);
 
@@ -43,4 +43,4 @@ export function setupVimeoPlayer() {
     //console.log('Current playback time:', currentTime);
   }, 1000);
   player.on('timeupdate', onTimeUpdate);
-}
+
